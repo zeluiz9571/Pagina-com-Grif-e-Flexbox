@@ -1,0 +1,174 @@
+/* Reset */
+body {
+    padding: 0; /* Resetando configurações */
+    margin: 0; /* Resetando configurações */
+    color: #353839; /* Cor do texto */
+    text-transform: uppercase;
+    text-align: center; /* Alinhamento */
+}
+
+/* _________________________________________________________________________________________ */
+/* Container geral */
+.container {
+    display: grid;
+    height: 100vh;
+    overflow-y: hidden;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1.5fr 1.5fr 0.7fr;
+    grid-template-areas: 
+    "header header header header"
+    "main main main sidebar"
+    "content1 content2 content3 sidebar"
+    "footer footer footer footer";
+    gap: 0.6%;
+    ;
+}
+/* _________________________________________________________________________________________ */
+/* Header */
+header {
+    background: #a7ffeb;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    margin-left: 50px;
+}
+
+nav {
+    margin-right: 50px;
+}
+
+nav a {
+    margin: 0 30px;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bolder;
+    color: black;
+}
+
+/* ___________________________________________________________________________ */
+/* Main */
+main {
+    background: #84ffff;
+    grid-area: main;
+}
+
+/* _____________________________________________________________________________________ */
+/* sidebar */
+#sidebar {
+    background: #18ffff;
+    grid-area: sidebar;
+}
+
+#sidebar img {
+    width: 100%;
+    height: 100%;
+    transform: scalex(-1); /*inverte a imagem */
+}
+
+/* __________________________________________________________________________ */
+/* Divs (Cards) */
+#content1 {
+    background: #6fffd2;
+    grid-area: content1;
+}
+#content1 img {
+    width: 100%;
+    height: 85%;
+}
+
+#content1 h2{
+    height: 15%;
+    margin: 0;
+}
+
+#content2 {
+    background: #64ffba;
+    grid-area: content2;
+}
+
+#content2 img {
+    width: 100%;
+    height: 85%;
+}
+
+#content2 h2{
+    height: 15%;
+    margin: 0;
+}
+
+#content3 {
+    background: #73ffba;
+    grid-area: content3;
+}
+
+#content3 img {
+    width: 100%;
+    height: 85%;
+}
+
+#content3 h2 {
+    height: 15%;
+    margin: 0;
+}
+
+/* ____________________________________________________________________________________________ */
+/* Footer */
+footer {
+    background: #1de9b6;
+    grid-area: footer;
+    font-size: 10px;
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:768px) {
+    header {
+        display: inline-block;
+    }
+    header img {
+        margin: 0;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    nav a {
+        margin: 15px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bolder;
+        color: black;
+    }
+}
+
+@media only screen and(max-width:550px) {
+    .container {
+        overflow-y: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1.5fr 1.5fr;
+        grid-template-areas: 
+        "header"
+        "main"
+        "sidebar"
+        "content1"
+        "content2"
+        "content3"
+        "footer"
+        ;
+    }
+    #content1 img {
+        width: 100%;
+        height: 90%;
+    }
+    footer {
+        font-size: 16px;
+        text-transform: none;
+        height: 90px;
+    }
+}
